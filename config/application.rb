@@ -25,3 +25,7 @@ module Fabtoolanddye
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+#Amol added for dart sass
+config.dartsass.builds = {
+  "application.scss" => "application.css"
+}
