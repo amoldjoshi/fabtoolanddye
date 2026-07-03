@@ -23,9 +23,11 @@ module Fabtoolanddye
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.dartsass.builds = {
+      "application.scss" => "application.css"
+    }
   end
 end
 #Amol added for dart sass
-config.dartsass.builds = {
-  "application.scss" => "application.css"
-}
+
+
