@@ -13,4 +13,6 @@
   <% end %>
 </div>
 
-<%= link_to "New blog", new_blog_path %>
+<% if can? :create, Blog %>
+  <%= link_to "New blog", new_blog_path %>
+<% end %>

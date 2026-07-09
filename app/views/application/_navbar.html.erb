@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="light">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png", alt: "My Company", height: "160" %>
+    <% end %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto fs-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+         <%= link_to "About", aboutus_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+         <%= link_to "Contact", contact_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Services", services_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Projects", projects_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Blogs", blogs_path, class: "nav-link" %>
+        </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>

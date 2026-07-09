@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  get "pages/home"
-  get "pages/aboutus"
-  get "pages/contact"
+  
+  # Amol 7/4 Defines the root path route ("/")
+  root "services#index"
+  #Amol added following 2 lines and commented out three.
+  get "aboutus", to: "pages#aboutus"
+  get "contact", to: "pages#contact"
+  #get "pages/home"
+  #get "pages/aboutus"
+  #get "pages/contact"
   resources :blogs
   resources :projects
   resources :services
@@ -16,6 +22,6 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  
+  
 end

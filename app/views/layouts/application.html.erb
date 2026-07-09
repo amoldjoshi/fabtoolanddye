@@ -24,6 +24,11 @@
   </head>
 
   <body>
+    <%#Amol added following line navbar to appear in all pages %>
+    <%= render "topbar" %>
+    <%= render "navbar" %>
+
     <%= yield %>
   </body>
+  <%= render "footer" %>
 </html>
