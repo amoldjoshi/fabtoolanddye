@@ -1,4 +1,10 @@
 <div id="<%= dom_id project %>">
+  <% if project.image_filename.present? %>
+    <div>
+      <%= image_tag project.image_filename, class: "img-fluid mb-3" %>
+    </div>
+  <% end %>
+
   <div>
     <strong>Title:</strong>
     <%= project.title %>

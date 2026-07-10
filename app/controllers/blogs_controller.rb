@@ -65,6 +65,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.expect(blog: [ :title, :headingone, :bodyone, :headingtwo, :bodytwo, :headingthree, :bodythree, :published_at, :slug ])
+      params.expect(blog: [ :title, :headingone, :bodyone, :headingtwo, :bodytwo, :headingthree, :bodythree, :published_at, :slug, :image_filename ])
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_02_055025) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_10_000726) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -47,6 +47,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_02_055025) do
     t.text "headingone"
     t.text "headingthree"
     t.text "headingtwo"
+    t.string "image_filename"
     t.datetime "published_at"
     t.string "slug"
     t.string "title"
@@ -68,6 +69,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_02_055025) do
     t.datetime "created_at", null: false
     t.string "customer"
     t.text "description"
+    t.string "image_filename"
     t.date "project_data"
     t.integer "service_id", null: false
     t.string "title"
@@ -78,6 +80,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_02_055025) do
   create_table "services", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
+    t.string "image_filename"
     t.string "slug"
     t.text "summary"
     t.string "title"

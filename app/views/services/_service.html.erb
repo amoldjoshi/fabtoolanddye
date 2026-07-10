@@ -1,4 +1,10 @@
 <div id="<%= dom_id service %>">
+  <% if service.image_filename.present? %>
+    <div>
+      <%= image_tag service.image_filename, class: "img-fluid mb-3" %>
+    </div>
+  <% end %>
+  
   <div>
     <strong>Title:</strong>
     <%= service.title %>

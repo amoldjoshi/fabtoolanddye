@@ -4,16 +4,19 @@
 
 <h1>Services</h1>
 
-<div id="services">
+<div class="row row-cols-1 row-cols-md-3 g-4" id="services">
   <% @services.each do |service| %>
-    <%= render service %>
-    <p>
-      <%= link_to "Show this service", service %>
-    </p>
+    <div class="col">
+      <%= render "resource_card",
+            record: service,
+            title: service.title,
+            subtitle: service.summary,
+            body: truncate(service.content, length: 150),
+            image: service.image_filename %>
+    </div>
   <% end %>
 </div>
 
-<% if can? :create, @service %>
-  <%= link_to "New service", new_service_path %>
+<% if can? :create, Service %>
+  <%= link_to "New service", new_service_path, class: "btn btn-primary mt-4" %>
 <% end %>
-
