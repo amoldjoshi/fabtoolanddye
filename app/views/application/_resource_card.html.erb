@@ -1,37 +1,24 @@
 <%# locals: (record:, title:, subtitle: nil, body: nil, image: nil) %>
-<div class="craft-card">
+<div class="card mb-3">
+  <h3 class="card-header"><%= title %></h3>
   <% if image.present? %>
-    <div class="craft-card__image-wrap">
-      <%= image_tag image, class: "craft-card__image" %>
-    </div>
+    <%= image_tag image, class: "card-img-top" %>
   <% end %>
 
-  <div class="craft-card__body">
-    <h5 class="craft-card__title"><%= title %></h5>
-
-    <% if subtitle.present? %>
-      <h6 class="craft-card__subtitle"><%= subtitle %></h6>
-    <% end %>
+  <div class="card-body">
 
     <% if body.present? %>
-      <p class="craft-card__text"><%= body %></p>
+      <p class="card-text fs-5"><%= body %></p>
     <% end %>
 
-    <hr class="craft-card__divider">
+    <%= link_to "Click here for details...", polymorphic_path(record), class: "btn btn-primary w-100" %>
 
-    <%= link_to polymorphic_path(record), class: "craft-card__cta" do %>
-      Read More <span class="craft-card__arrow">&rarr;</span>
+    <% if can? :edit, record %>
+      <%= link_to "Edit", edit_polymorphic_path(record), class: "card-link" %>
     <% end %>
 
-    <% if can?(:edit, record) || can?(:destroy, record) %>
-      <div class="craft-card__admin-actions">
-        <% if can? :edit, record %>
-          <%= link_to "Edit", edit_polymorphic_path(record), class: "craft-card__admin-link" %>
-        <% end %>
-        <% if can? :destroy, record %>
-          <%= button_to "Delete", record, method: :delete, class: "craft-card__admin-link craft-card__admin-link--danger", form: { data: { turbo_confirm: "Are you sure?" } } %>
-        <% end %>
-      </div>
+    <% if can? :destroy, record %>
+      <%= button_to "Delete", record, method: :delete, class: "btn btn-link card-link p-0 border-0 align-baseline", form: { data: { turbo_confirm: "Are you sure?" } } %>
     <% end %>
   </div>
 </div>

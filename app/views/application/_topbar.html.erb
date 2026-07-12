@@ -8,7 +8,7 @@
           <span class="nav-link disabled me-2"><%= current_user.email %></span>
         </li>
         <li class="nav-item">
-          <span class="nav-link disabled me-2">
+          <span class="nav-link me-2">
             <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-secondary btn-sm" %>
           </span>
         </li>

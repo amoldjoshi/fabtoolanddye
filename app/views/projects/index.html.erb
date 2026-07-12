@@ -4,15 +4,19 @@
 
 <h1>Projects</h1>
 
-<div id="projects">
+<div class="row row-cols-1 row-cols-md-3 g-4" id="projects">
   <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
+    <div class="col">
+      <%= render "application/resource_card",
+            record: project,
+            title: project.title,
+            subtitle: project.customer,
+            body: truncate(project.description, length: 300, separator: " "),
+            image: project.image_filename %>
+    </div>
   <% end %>
 </div>
 
 <% if can? :create, Project %>
-  <%= link_to "New project", new_project_path %>
+  <%= link_to "New project", new_project_path, class: "btn btn-primary mt-4" %>
 <% end %>

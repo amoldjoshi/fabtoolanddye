@@ -1,15 +1,48 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @project %>
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
 
-<div>
-  <% if can? :edit, @project %>
-    <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <% end %>
+      <% if @project.image_filename.present? %>
+        <%= image_tag @project.image_filename, class: "img-fluid rounded shadow-sm mb-4 w-100", style: "max-height: 420px; object-fit: cover;" %>
+      <% end %>
 
-  <%= link_to "Back to projects", projects_path %>
+      <h1 class="mb-2"><%= @project.title %></h1>
 
-  <% if can? :destroy, @project %>
-    <%= button_to "Destroy this project", @project, method: :delete %>
-  <% end %>
+      <% if @project.customer.present? %>
+        <p class="lead text-muted">Customer: <%= @project.customer %></p>
+      <% end %>
+
+      <% if @project.service.present? %>
+        <p class="text-muted mb-4">
+          Service:
+          <%= link_to @project.service.title, @project.service, class: "text-decoration-none" %>
+        </p>
+      <% end %>
+
+      <hr class="my-4">
+
+      <div class="fs-5" style="white-space: pre-line;"><%= @project.description %></div>
+
+      <% if @project.project_data.present? %>
+        <p class="text-muted mt-4">
+          <strong>Project date:</strong> <%= @project.project_data %>
+        </p>
+      <% end %>
+
+      <div class="d-flex gap-2 mt-5">
+        <%= link_to "Back to Projects", projects_path, class: "btn btn-outline-secondary" %>
+
+        <% if can? :edit, @project %>
+          <%= link_to "Edit", edit_project_path(@project), class: "btn btn-primary" %>
+        <% end %>
+
+        <% if can? :destroy, @project %>
+          <%= button_to "Delete", @project, method: :delete, class: "btn btn-outline-danger ms-auto", form: { data: { turbo_confirm: "Are you sure?" } } %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
 </div>
