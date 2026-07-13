@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy ]
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
   # GET /blogs or /blogs.json
   def index
     @blogs = Blog.all
@@ -60,7 +60,7 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params.expect(:id))
+      @blog = Blog.find_by!(slug: params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.

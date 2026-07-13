@@ -3,4 +3,8 @@ class Service < ApplicationRecord
   has_many :projects, dependent: :destroy
   #Amol removed, using static images in assets/images folder for now. Will use active storage later.
   #has_one_attached :image
+  
+  def to_param
+    slug
+  end
 end

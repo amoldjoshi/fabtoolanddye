@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[ show edit update destroy ]
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
   # GET /projects or /projects.json
   def index
     @projects = Project.all
@@ -60,7 +60,7 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
-      @project = Project.find(params.expect(:id))
+      @project = Project.find_by!(slug: params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.

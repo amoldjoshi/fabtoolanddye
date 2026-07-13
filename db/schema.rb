@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_10_000726) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_13_011445) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -63,6 +63,17 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_10_000726) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "page_contents", force: :cascade do |t|
+    t.text "body1"
+    t.text "body2"
+    t.datetime "created_at", null: false
+    t.string "image_filename"
+    t.string "slug"
+    t.string "title1"
+    t.string "title2"
+    t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|

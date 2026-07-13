@@ -1,2 +1,21 @@
-<h1>Pages#aboutus</h1>
-<p>Find me in app/views/pages/aboutus.html.erb</p>
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+
+      <% if @page.image_filename.present? %>
+        <%= image_tag @page.image_filename, class: "img-fluid rounded shadow-sm mb-4 w-100" %>
+      <% end %>
+
+      <h1><%= @page.title1 %></h1>
+      <div class="fs-5" style="white-space: pre-line;"><%= @page.body1 %></div>
+
+      <h1><%= @page.title2 %></h1>
+      <div class="fs-5" style="white-space: pre-line;"><%= @page.body2 %></div>
+
+      <% if can? :update, @page %>
+        <%= link_to "Edit this page", edit_page_content_path(@page), class: "btn btn-primary mt-4" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

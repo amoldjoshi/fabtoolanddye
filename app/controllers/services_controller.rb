@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: %i[ show edit update destroy ]
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
   # GET /services or /services.json
   def index
     @services = Service.all
@@ -60,7 +60,7 @@ class ServicesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_service
-      @service = Service.find(params.expect(:id))
+      @service = Service.find_by!(slug: params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   # Amol 7/4 Defines the root path route ("/")
   root "services#index"
   #Amol added following 2 lines and commented out three.
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :blogs
   resources :projects
   resources :services
+  resources :page_contents, only: [:edit, :update], controller: 'pages'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
