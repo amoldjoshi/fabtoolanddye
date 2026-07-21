@@ -4,15 +4,19 @@
 
 <h1>Blogs</h1>
 
-<div id="blogs">
+<div class="row row-cols-1 row-cols-md-3 g-4" id="blogs">
   <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
+    <div class="col">
+      <%= render "resource_card",
+            record: blog,
+            title: blog.title,
+            subtitle: blog.headingone,
+            body: truncate(blog.bodyone, length: 300),
+            image: blog.image_filename %>
+    </div>
   <% end %>
 </div>
 
 <% if can? :create, Blog %>
-  <%= link_to "New blog", new_blog_path %>
+  <%= link_to "New blog", new_blog_path, class: "btn btn-primary mt-4" %>
 <% end %>

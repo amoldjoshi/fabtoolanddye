@@ -13,12 +13,15 @@
 
     <%= link_to "Click here for details...", polymorphic_path(record), class: "btn btn-primary w-100" %>
 
-    <% if can? :edit, record %>
-      <%= link_to "Edit", edit_polymorphic_path(record), class: "card-link" %>
-    <% end %>
+    <div class="d-flex gap-3 align-items-center">
+      <% if can? :edit, record %>
+        <%= link_to "Edit", edit_polymorphic_path(record), class: "card-link" %>
+      <% end %>
 
-    <% if can? :destroy, record %>
-      <%= button_to "Delete", record, method: :delete, class: "btn btn-link card-link p-0 border-0 align-baseline", form: { data: { turbo_confirm: "Are you sure?" } } %>
-    <% end %>
+      <% if can? :destroy, record %>
+        <%= link_to "Delete", record, class: "card-link",
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <% end %>
+    </div>
   </div>
 </div>
