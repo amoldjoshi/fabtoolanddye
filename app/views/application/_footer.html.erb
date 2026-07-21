@@ -1,4 +1,4 @@
-<footer class="bg-light text-dark py-5 border-top">
+<footer class="bg-dark text-white py-5 border-top">
   <div class="container">
     <div class="row gy-5">
 
@@ -12,13 +12,13 @@
         <h4 class="fw-bold mb-4">Quick Link</h4>
         <ul class="list-unstyled">
           <li class="mb-3">
-            <%= link_to root_path, class: "text-dark text-decoration-none" do %>
-              <span class="text-danger me-2">&rarr;</span>Home
+            <%= link_to root_path, class: "text-white text-decoration-none" do %>
+              <span class="text-white me-2">&bull;</span>Home
             <% end %>
           </li>
           <li class="mb-3">
-            <%= link_to aboutus_path, class: "text-dark text-decoration-none" do %>
-              <span class="text-danger me-2">&rarr;</span>About Us
+            <%= link_to aboutus_path, class: "text-white text-decoration-none" do %>
+              <span class="text-white me-2">&bull;</span>About Us
             <% end %>
           </li>
         </ul>
@@ -29,14 +29,16 @@
         <h4 class="fw-bold mb-4">Our Services</h4>
         <ul class="list-unstyled">
           <% [
-               ["Job Shop", "#"],
-               ["Lamp & Lighting Parts", "#"],
-               ["Metal Fabrication", "#"],
-               ["Tool & Die Maintenance", "#"]
+               ["Die Shop", service_path("Die_Shop")],
+               ["Die Repair", "#"],
+               ["CNC Machining", "#"],
+               ["Aluminum Extrusion", "#"],
+               ["WaterJet Cutting", "#"],
+               ["PE Services", service_path("PE_Services")]
              ].each do |label, url| %>
             <li class="mb-3">
-              <%= link_to url, class: "text-dark text-decoration-none" do %>
-                <span class="text-danger me-2">&rarr;</span><%= label %>
+              <%= link_to url, class: "text-white text-decoration-none" do %>
+                <span class="text-white me-2">&bull;</span><%= label %>
               <% end %>
             </li>
           <% end %>
@@ -47,22 +49,15 @@
       <div class="col-md-3 col-sm-6">
         <h4 class="fw-bold mb-4">Contact Now</h4>
 
-        <p class="fw-bold mb-1">Address</p>
-        <p class="mb-3">1640 El Greco Drive, El Monte, CA 91731</p>
+        <p class="fw-bold mb-1"><span class="text-white me-2">&bull;</span>Mailing Address</p>
+        <p class="mb-3 ms-3">1640 El Greco Drive, El Monte, CA 91731</p>
 
-        <p class="fw-bold mb-1">Mailing Address</p>
-        <p class="mb-3">1640 El Greco Drive, El Monte, CA 91731</p>
+        <p class="fw-bold mb-1"><span class="text-white me-2">&bull;</span>Contact Number</p>
+        <p class="mb-3 ms-3">+1 (909) 320-5412</p>
 
-        <p class="mb-3">+1 (626) 320-5412</p>
+        <p class="fw-bold mb-1"><span class="text-white me-2">&bull;</span>Contact Email</p>
+        <p class="mb-3 ms-3">ContactFabToolAndDie@gmail.com</p>
 
-        <div class="d-flex gap-2">
-          <a href="#" class="btn btn-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-            <i class="bi bi-facebook"></i>
-          </a>
-          <a href="#" class="btn btn-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-            <i class="bi bi-google"></i>
-          </a>
-        </div>
       </div>
 
     </div>
