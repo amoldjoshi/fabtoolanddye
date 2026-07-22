@@ -1,10 +1,10 @@
-<footer class="bg-dark text-white py-5 border-top">
+<footer class="bg-dark text-white py-5 border-top fs-5">
   <div class="container">
     <div class="row gy-5">
 
       <!-- Logo column -->
       <div class="col-md-3 col-sm-6">
-        <%= image_tag "logo.png", alt: "My Company", height: "240", class: "rounded" %>
+        <%= image_tag "logo.jpg", alt: "My Company", height: "240", class: "rounded" %>
       </div>
 
       <!-- Quick Links column -->
@@ -34,7 +34,8 @@
                ["CNC Machining", "#"],
                ["Aluminum Extrusion", "#"],
                ["WaterJet Cutting", "#"],
-               ["PE Services", service_path("PE_Services")]
+               ["PE Services", service_path("PE_Services")],
+               ["Prototype & Patents", service_path("Prototype_and_Patents")],
              ].each do |label, url| %>
             <li class="mb-3">
               <%= link_to url, class: "text-white text-decoration-none" do %>
