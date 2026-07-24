@@ -77,7 +77,7 @@ gem "cancancan", "~> 3.6"
 
 gem "friendly_id", "~> 5.7"
 
-gem "pagy", "~> 43.5"
+gem "pagy", "~> 43.6"
 
 gem "fiddle"
 
