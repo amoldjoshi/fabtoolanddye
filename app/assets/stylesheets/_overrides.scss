@@ -1,0 +1,26 @@
+// ============================
+// Custom Overrides
+// ============================
+
+// --- Navbar ---
+.navbar-custom {
+  background-color: #c1c9c9 !important;
+
+  .nav-link {
+    color: rgb(255, 0, 55);
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #212529 !important;
+    }
+  }
+}
+
+body {
+  background-color: #e9e9e9f1; // light grey tint
+}
+// --- Buttons ---
+// (future changes go here)
+
+// --- Footer ---
+// (future changes go here)
