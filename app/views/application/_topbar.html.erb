@@ -8,21 +8,21 @@
           <span class="nav-link disabled me-2 text-dark"><%= current_user.email %></span>
         </li>
         <li class="nav-item">
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-light btn-sm" %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary btn-sm" %>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-light btn-sm me-2" %>
+          <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-primary btn-sm me-2" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign in", new_user_session_path, class: "btn btn-light btn-sm" %>
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-sm" %>
         </li>
       <% end %>
     </ul>
 
     <form class="d-flex">
       <input class="form-control form-control-sm me-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-light btn-sm my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-primary btn-sm my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </div>
