@@ -14,13 +14,21 @@
 
     &:hover {
       color: #212529 !important;
-      background-color: rgba(0, 0, 0, 0.1); // rectangle on hover
+      //background-color: rgba(0, 0, 0, 0.1); // rectangle on hover
+      background-color: #68d391 !important; // Bootswatch Brite's "success/green" rectangle
     }
   }
 }
 
 body {
-  background-color: #e9e9e9f1; // light grey tint
+  //background-color: #e9e9e9f1; // light grey tint
+  background-image: url('backimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #e9e9e9f1; // fallback / shows through if image has any transparency
+  min-height: 100vh;
 }
 
 // --- Card ---
@@ -38,5 +46,12 @@ body {
   &:hover {
     background-color: #6c757d; // Bootstrap's "secondary" grey
     color: #fff !important;
+    //color:  #68d391 !important; // Tailwind's "green-400"
   }
+}
+
+.page-content-bg {
+  background-color: #e9e9e9f1; // same light grey tint as before
+  border-radius: 0.5rem;       // optional: soften the edges
+  padding: 2rem;                // optional: breathing room so bg doesn't hug the text
 }
