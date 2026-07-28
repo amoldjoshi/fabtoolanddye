@@ -41,11 +41,11 @@
           <% [
                ["Die Shop", service_path("Die_Shop")],
                ["Die Repair", "#"],
+               ["PE Services", service_path("PE_Services")],
+               ["Prototype & Patents", service_path("Prototype_and_Patents")],
                ["CNC Machining", "#"],
                ["Aluminum Extrusion", "#"],
                ["WaterJet Cutting", "#"],
-               ["PE Services", service_path("PE_Services")],
-               ["Prototype & Patents", service_path("Prototype_and_Patents")],
              ].each do |label, url| %>
             <li class="mb-3">
               <%= link_to url, class: "text-white text-decoration-none" do %>

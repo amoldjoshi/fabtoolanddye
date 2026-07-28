@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container py-4">
+<div class="container py-4 page-content-bg">
   <div class="row justify-content-center">
     <div class="col-lg-8">
 
@@ -32,7 +32,7 @@
       <% end %>
 
       <div class="d-flex gap-2 mt-5">
-        <%= link_to "Back to Projects", projects_path, class: "btn btn-outline-secondary" %>
+        <%= link_to "Back to Projects", projects_path, class: "btn btn-primary" %>
 
         <% if can? :edit, @project %>
           <%= link_to "Edit", edit_project_path(@project), class: "btn btn-primary" %>

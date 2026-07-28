@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container py-4">
+<div class="container py-4 page-content-bg">
 
   <h1 class="mb-2"><%= @blog.title %></h1>
 
@@ -28,4 +28,33 @@
       <% if @blog.headingtwo.present? %>
         <h2 class="mb-2 mt-4"><%= @blog.headingtwo %></h2>
       <% end %>
-      <div class="fs-5"
+      <div class="fs-5" style="white-space: pre-line;"><%= @blog.bodytwo %></div>
+
+    </div>
+
+  </div>
+
+  <% if @blog.headingthree.present? || @blog.bodythree.present? %>
+    <div class="row justify-content-center mt-4">
+      <div class="col-lg-12">
+        <% if @blog.headingthree.present? %>
+          <h2 class="mb-2"><%= @blog.headingthree %></h2>
+        <% end %>
+        <div class="fs-5" style="white-space: pre-line;"><%= @blog.bodythree %></div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="d-flex gap-2 mt-5">
+    <%= link_to "Back to Blogs", blogs_path, class: "btn btn-primary" %>
+
+    <% if can? :edit, @blog %>
+      <%= link_to "Edit", edit_blog_path(@blog), class: "btn btn-primary" %>
+    <% end %>
+
+    <% if can? :destroy, @blog %>
+      <%= button_to "Delete", @blog, method: :delete, class: "btn btn-outline-danger ms-auto", form: { data: { turbo_confirm: "Are you sure?" } } %>
+    <% end %>
+  </div>
+
+</div>

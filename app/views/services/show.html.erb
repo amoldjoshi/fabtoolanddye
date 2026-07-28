@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container py-4">
+<div class="container py-4 page-content-bg">
 
   <h1 class="mb-2"><%= @service.title %></h1>
 
@@ -27,7 +27,7 @@
   </div>
 
   <div class="d-flex gap-2 mt-5">
-    <%= link_to "Back to Services", services_path, class: "btn btn-outline-secondary" %>
+    <%= link_to "Back to Services", services_path, class: "btn btn-primary" %>
 
     <% if can? :edit, @service %>
       <%= link_to "Edit", edit_service_path(@service), class: "btn btn-primary" %>
