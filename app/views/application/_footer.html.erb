@@ -39,13 +39,12 @@
         <h4 class="fw-bold mb-4">Our Services</h4>
         <ul class="list-unstyled">
           <% [
-               ["Die Shop", service_path("Die_Shop")],
-               ["Die Repair", "#"],
-               ["PE Services", service_path("PE_Services")],
-               ["Prototype & Patents", service_path("Prototype_and_Patents")],
-               ["CNC Machining", "#"],
-               ["Aluminum Extrusion", "#"],
-               ["WaterJet Cutting", "#"],
+               ["Die Shop", service_path("die-making")],
+               ["Die Repair", "die-repair"],
+               ["PE Services", service_path("PE-Services")],
+               ["CNC Machining", service_path"cnc-edwc"],
+               ["Prototype & Patents", service_path("prototype-patents")],
+               ["Aluminum Extrusion & Waterjet", service_path("aluminum-waterjet")],
              ].each do |label, url| %>
             <li class="mb-3">
               <%= link_to url, class: "text-white text-decoration-none" do %>
