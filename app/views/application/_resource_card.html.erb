@@ -1,19 +1,19 @@
 <%# locals: (record:, title:, subtitle: nil, body: nil, image: nil) %>
-<div class="card mb-3">
+<div class="card mb-3 h-100">
   <h3 class="card-header"><%= title %></h3>
   <% if image.present? %>
     <%= image_tag image, class: "card-img-top" %>
   <% end %>
 
-  <div class="card-body">
+  <div class="card-body d-flex flex-column">
 
     <% if body.present? %>
       <p class="card-text fs-5"><%= body %></p>
     <% end %>
 
-    <%= link_to "Click here for details...", polymorphic_path(record), class: "btn btn-primary w-100" %>
+    <%= link_to "Click here for details...", polymorphic_path(record), class: "btn btn-primary w-100 mt-auto" %>
 
-    <div class="d-flex gap-3 align-items-center">
+    <div class="d-flex gap-3 align-items-center mt-2">
       <% if can? :edit, record %>
         <%= link_to "Edit", edit_polymorphic_path(record), class: "card-link" %>
       <% end %>
